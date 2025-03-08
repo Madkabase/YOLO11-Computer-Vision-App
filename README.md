@@ -9,6 +9,7 @@ This is a Streamlit web application that uses YOLO11 (You Only Look Once) models
 
 - Upload and process custom images
 - Process sample videos
+- Real-time webcam detection
 - Adjust confidence threshold
 - View detection results
 
@@ -19,6 +20,7 @@ This is a Streamlit web application that uses YOLO11 (You Only Look Once) models
 - Streamlit
 - OpenCV
 - PIL (Pillow)
+- A working webcam (for webcam feature)
 
 ## Installation
 
@@ -69,6 +71,21 @@ python -m streamlit run main.py
 
 The web interface will open in your default browser.
 
+### Using the Webcam Feature
+
+The application now supports real-time object detection using your webcam:
+
+1. Select "Webcam" as the input source
+2. Choose your webcam ID (usually 0 for built-in webcams)
+3. Adjust the frames per second (FPS) setting
+4. Click "Start Webcam Detection" to begin
+5. Click "Stop Webcam" to end the detection
+
+Webcam troubleshooting:
+- Make sure your webcam is not being used by another application
+- Try different webcam IDs if you have multiple cameras
+- Reduce the FPS if detection is too slow
+
 ## Project Structure
 
 - `main.py`: The main Streamlit application
@@ -85,3 +102,8 @@ python -m streamlit run main.py
 ```
 
 If you see deprecation warnings about `use_column_width`, these have been fixed in the latest version by using `use_container_width` instead.
+
+If your webcam isn't detected:
+1. Make sure it's properly connected and not in use by another application
+2. Try restarting your computer
+3. Check if your browser has permission to access the webcam
